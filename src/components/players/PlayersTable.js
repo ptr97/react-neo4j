@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
+import { DeletePlayer } from "./DeletePlayer";
 
 
 export const PlayersTable = (props) => {
@@ -27,7 +28,12 @@ export const PlayersTable = (props) => {
         <Table.Cell>{player['height']}</Table.Cell>
         <Table.Cell>{(player['team'] && player['team']['name']) || '-'}</Table.Cell>
         <Table.Cell>UPDATE</Table.Cell>
-        <Table.Cell>DELETE</Table.Cell>
+        <Table.Cell>
+          <DeletePlayer
+            playerFirstName={player['firstName']}
+            playerDeleted={(playerFirstName) => props.playerDeleted(playerFirstName)}
+          />
+        </Table.Cell>
       </Table.Row>
     );
   };
