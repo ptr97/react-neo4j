@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getAllTeams } from "../../QueryService";
 import { TeamsTable } from "./TeamsTable";
+import { getAllTeams } from "../../services/TeamService";
 
 
 export const Teams = (props) => {
@@ -12,11 +12,17 @@ export const Teams = (props) => {
   }, []);
 
 
+  const teamDeleted = (teamCode) => {
+    const newState = teamsState.filter(t => t['code'] !== teamCode);
+    setTeams(newState);
+  };
+
   return (
     <div>
       <h1>Teams</h1>
       <TeamsTable
         teams={teamsState}
+        teamDeleted={(teamCode) => teamDeleted(teamCode)}
       />
     </div>
   );

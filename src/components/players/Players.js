@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getAllPlayers } from "../../QueryService";
 import { PlayersTable } from "./PlayersTable";
+import { getAllPlayers } from "../../services/PlayersService";
 
 export const Players = (props) => {
 

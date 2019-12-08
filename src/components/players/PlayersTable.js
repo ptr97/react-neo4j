@@ -25,7 +25,7 @@ export const PlayersTable = (props) => {
         <Table.Cell>{player['lastName']}</Table.Cell>
         <Table.Cell>{player['shirtNumber']}</Table.Cell>
         <Table.Cell>{player['height']}</Table.Cell>
-        <Table.Cell>{player['team']['name']}</Table.Cell>
+        <Table.Cell>{(player['team'] && player['team']['name']) || '-'}</Table.Cell>
         <Table.Cell>UPDATE</Table.Cell>
         <Table.Cell>DELETE</Table.Cell>
       </Table.Row>
