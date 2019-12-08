@@ -17,7 +17,7 @@ const graphQLRequest = (body) => {
 
 export const getAllPlayers = () => {
   const playerValues = Object.keys(PlayerModel).join(' ');
-  const body = { query: `query AllPlayers { Player { ${playerValues} } }` };
+  const body = { query: `query AllPlayers { Player { ${playerValues} team { name } } }` };
   return graphQLRequest(body);
 };
 

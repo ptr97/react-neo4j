@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { SimpleTable } from "./SimpleTable";
-import { getAllTeams } from "../QueryService";
-import { TeamModel } from "../models/TeamModel";
+import { getAllTeams } from "../../QueryService";
+import { TeamsTable } from "./TeamsTable";
 
 
 export const Teams = (props) => {
@@ -16,9 +15,8 @@ export const Teams = (props) => {
   return (
     <div>
       <h1>Teams</h1>
-      <SimpleTable
-        model={TeamModel}
-        entities={teamsState}
+      <TeamsTable
+        teams={teamsState}
       />
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getAllPlayers } from "../QueryService";
-import { SimpleTable } from "./SimpleTable";
-import { PlayerModel } from "../models/PlayerModel";
+import { getAllPlayers } from "../../QueryService";
+import { PlayersTable } from "./PlayersTable";
 
 export const Players = (props) => {
 
@@ -14,9 +13,8 @@ export const Players = (props) => {
   return (
     <div>
       <h1>Players</h1>
-      <SimpleTable
-        model={PlayerModel}
-        entities={playersState}
+      <PlayersTable
+        players={playersState}
       />
     </div>
   );

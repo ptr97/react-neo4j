@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Grid } from 'semantic-ui-react'
 import { Sidebar } from "../components/Sidebar";
-import { Players } from "../components/Players";
-import { Teams } from "../components/Teams";
-import { AddTeam } from "../components/AddTeam";
-import { AddPlayer } from "../components/AddPlayer";
+import { Players } from "../components/players/Players";
+import { Teams } from "../components/teams/Teams";
+import { AddTeam } from "../components/teams/AddTeam";
+import { AddPlayer } from "../components/players/AddPlayer";
 
 
 export const RootContainer = () => {
