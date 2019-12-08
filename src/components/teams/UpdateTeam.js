@@ -34,6 +34,5 @@ export const UpdateTeam = (props) => {
       {modal(modalOpenState)}
       {button()}
     </React.Fragment>
-
   );
 };

@@ -3,8 +3,6 @@ import { Grid } from 'semantic-ui-react'
 import { Sidebar } from "../components/Sidebar";
 import { Players } from "../components/players/Players";
 import { Teams } from "../components/teams/Teams";
-import { AddTeam } from "../components/teams/AddTeam";
-import { AddPlayer } from "../components/players/AddPlayer";
 
 
 export const RootContainer = () => {
@@ -15,29 +13,15 @@ export const RootContainer = () => {
     component: <Players/>
   };
 
-  const addPlayerTab = {
-    name: "addPlayer",
-    displayName: "Add Player",
-    component: <AddPlayer/>
-  };
-
   const teamsTab = {
     name: "teams",
     displayName: "Teams",
     component: <Teams/>
   };
 
-  const addTeamTab = {
-    name: "addTeam",
-    displayName: "Add Team",
-    component: <AddTeam/>
-  };
-
   const appTabs = [
     playersTab,
-    addPlayerTab,
-    teamsTab,
-    addTeamTab
+    teamsTab
   ];
 
   const [sidebarState, setSidebarState] = useState(playersTab.name);

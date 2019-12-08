@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { TeamsTable } from "./TeamsTable";
 import { getAllTeams } from "../../services/TeamService";
+import { AddTeam } from "./AddTeam";
 
 
 export const Teams = (props) => {
@@ -28,6 +29,9 @@ export const Teams = (props) => {
       <TeamsTable
         teams={teamsState}
         teamDeleted={(teamCode) => teamDeleted(teamCode)}
+        teamInfoChanged={teamInfoChanged}
+      />
+      <AddTeam
         teamInfoChanged={teamInfoChanged}
       />
     </div>

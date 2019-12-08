@@ -27,3 +27,14 @@ export const updateTeam = (teamInfo) => {
   };
   return graphQLRequest(body);
 };
+
+export const addTeam = (teamInfo) => {
+  const body = {
+    query: "mutation AddTeam($teamCode: String!, $teamName: String!) { CreateTeam(name: $teamName, code: $teamCode) { name code } }",
+    variables: {
+      "teamCode": teamInfo.code,
+      "teamName": teamInfo.name
+    }
+  };
+  return graphQLRequest(body);
+};
