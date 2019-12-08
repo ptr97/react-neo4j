@@ -6,7 +6,7 @@ export const Sidebar = (props) => {
 
   const buttons = () => {
     return props.tabs.map(tab => {
-      return <Button onClick={() => props.mode(tab.name)}>{tab.displayName}</Button>
+      return <Button key={tab['name'].toString()} onClick={() => props.mode(tab.name)}>{tab.displayName}</Button>
     })
   };
 

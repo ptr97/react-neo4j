@@ -1,13 +1,6 @@
 import { config } from "./Config";
-
-
-const PlayerModel = {
-  id: "_id",
-  firstName: "firstName",
-  lastName: "lastName",
-  height: "height",
-  shirtNumber: "shirtNumber"
-};
+import { PlayerModel } from "./models/PlayerModel";
+import { TeamModel } from "./models/TeamModel";
 
 
 const graphQLRequest = (body) => {
@@ -23,7 +16,13 @@ const graphQLRequest = (body) => {
 };
 
 export const getAllPlayers = () => {
-  const playerValues = Object.values(PlayerModel).join(' ');
+  const playerValues = Object.keys(PlayerModel).join(' ');
   const body = { query: `query AllPlayers { Player { ${playerValues} } }` };
+  return graphQLRequest(body);
+};
+
+export const getAllTeams = () => {
+  const teamsValues = Object.keys(TeamModel).join(' ');
+  const body = { query: `query AllTeams { Team { ${teamsValues} } }` };
   return graphQLRequest(body);
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllPlayers } from "../QueryService";
-
+import { SimpleTable } from "./SimpleTable";
+import { PlayerModel } from "../models/PlayerModel";
 
 export const Players = (props) => {
 
@@ -10,31 +11,13 @@ export const Players = (props) => {
     getAllPlayers().then(p => setPlayers(p['data']['Player']));
   }, []);
 
-  const displayPlayers = () => {
-    return playersState.map(p =>
-      (
-        <tr>
-          <td>{p['firstName']}</td>
-          <td>{p['lastName']}</td>
-          <td>{p['shirtNumber']}</td>
-          <td>{p['height']}</td>
-        </tr>
-      )
-    )
-  };
-
   return (
     <div>
-      <h1>Players Component</h1>
-      <table>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Shirt Number</th>
-          <th>Height</th>
-        </tr>
-        {displayPlayers()}
-      </table>
+      <h1>Players</h1>
+      <SimpleTable
+        model={PlayerModel}
+        entities={playersState}
+      />
     </div>
   );
 };

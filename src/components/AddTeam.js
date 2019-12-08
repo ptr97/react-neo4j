@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export const AddTeam = (props) => {
-  return (<p>Add Team Component</p>);
+  return (<h1>Add Team</h1>);
 };
