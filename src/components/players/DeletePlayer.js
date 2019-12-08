@@ -13,7 +13,7 @@ export const DeletePlayer = (props) => {
 
   return (
     <Button basic color='red' onClick={() => deletePlayerAction(props.playerFirstName)}>
-      Delete Team
+      Delete Player
     </Button>
   );
 };

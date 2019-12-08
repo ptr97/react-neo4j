@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PlayersTable } from "./PlayersTable";
 import { getAllPlayers } from "../../services/PlayersService";
+import { AddPlayer } from "./AddPlayer";
 
 export const Players = (props) => {
 
@@ -8,11 +9,15 @@ export const Players = (props) => {
 
   useEffect(() => {
     getAllPlayers().then(p => setPlayers(p['data']['Player']));
-  }, [playersState]);
+  }, []);
 
   const playerDeleted = (playerFirstName) => {
     const newState = playersState.filter(t => t['firstName'] !== playerFirstName);
     setPlayers(newState);
+  };
+
+  const playerInfoChanged = () => {
+    getAllPlayers().then(p => setPlayers(p['data']['Player']));
   };
 
   return (
@@ -21,6 +26,10 @@ export const Players = (props) => {
       <PlayersTable
         players={playersState}
         playerDeleted={(playerFirstName) => playerDeleted(playerFirstName)}
+        playerInfoChanged={playerInfoChanged}
+      />
+      <AddPlayer
+        playerInfoChanged={playerInfoChanged}
       />
     </div>
   );

@@ -10,7 +10,7 @@ export const Teams = (props) => {
 
   useEffect(() => {
     getAllTeams().then(p => setTeams(p['data']['Team']));
-  }, [teamsState]);
+  }, []);
 
 
   const teamDeleted = (teamCode) => {
