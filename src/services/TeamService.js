@@ -16,3 +16,14 @@ export const deleteTeam = (teamCode) => {
   };
   return graphQLRequest(body);
 };
+
+export const updateTeam = (teamInfo) => {
+  const body = {
+    query: "mutation UpdateTeam($teamName: String!, $teamCode: String!) { UpdateTeam(name: $teamName, code: $teamCode) { name code }}",
+    variables: {
+      "teamName": teamInfo.name,
+      "teamCode": teamInfo.code
+    }
+  };
+  return graphQLRequest(body);
+};

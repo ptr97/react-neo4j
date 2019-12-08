@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
 import { DeleteTeam } from "./DeleteTeam";
+import { UpdateTeam } from "./UpdateTeam";
 
 
 export const TeamsTable = (props) => {
@@ -21,7 +22,12 @@ export const TeamsTable = (props) => {
       <Table.Row key={team['_id']}>
         <Table.Cell>{team['name']}</Table.Cell>
         <Table.Cell>{team['code']}</Table.Cell>
-        <Table.Cell>UPDATE</Table.Cell>
+        <Table.Cell>
+          <UpdateTeam
+            teamInfo={team}
+            teamInfoChanged={props.teamInfoChanged}
+          />
+        </Table.Cell>
         <Table.Cell>
           <DeleteTeam
             teamCode={team['code']}

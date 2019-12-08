@@ -9,7 +9,7 @@ export const Teams = (props) => {
 
   useEffect(() => {
     getAllTeams().then(p => setTeams(p['data']['Team']));
-  }, []);
+  }, [teamsState]);
 
 
   const teamDeleted = (teamCode) => {
@@ -17,12 +17,18 @@ export const Teams = (props) => {
     setTeams(newState);
   };
 
+  const teamInfoChanged = () => {
+    getAllTeams().then(p => setTeams(p['data']['Team']));
+  };
+
+
   return (
     <div>
       <h1>Teams</h1>
       <TeamsTable
         teams={teamsState}
         teamDeleted={(teamCode) => teamDeleted(teamCode)}
+        teamInfoChanged={teamInfoChanged}
       />
     </div>
   );
