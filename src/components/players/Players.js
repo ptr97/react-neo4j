@@ -3,6 +3,7 @@ import { PlayersTable } from "./PlayersTable";
 import { addPlayerToTeam, getAllPlayers } from "../../services/PlayersService";
 import { AddPlayer } from "./AddPlayer";
 import { getAllTeams } from "../../services/TeamService";
+import { Header } from "semantic-ui-react";
 
 
 export const Players = (props) => {
@@ -34,7 +35,7 @@ export const Players = (props) => {
 
   return (
     <div>
-      <h1>Players</h1>
+      <Header as='h1'>Players</Header>
       <PlayersTable
         players={playersState}
         allTeams={allTeams}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TeamsTable } from "./TeamsTable";
 import { getAllTeams } from "../../services/TeamService";
 import { AddTeam } from "./AddTeam";
+import { Header } from "semantic-ui-react";
 
 
 export const Teams = (props) => {
@@ -25,7 +26,7 @@ export const Teams = (props) => {
 
   return (
     <div>
-      <h1>Teams</h1>
+      <Header as='h1'>Teams</Header>
       <TeamsTable
         teams={teamsState}
         teamDeleted={(teamCode) => teamDeleted(teamCode)}

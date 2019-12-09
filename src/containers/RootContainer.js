@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import { Grid } from 'semantic-ui-react'
-import { Sidebar } from "../components/Sidebar";
+import { Sidebar } from "../components/sidebar/Sidebar";
 import { Players } from "../components/players/Players";
 import { Teams } from "../components/teams/Teams";
-
+import './RootContainer.css'
 
 export const RootContainer = () => {
 
   const playersTab = {
     name: "players",
+    iconName: "user",
     displayName: "Players",
     component: <Players/>
   };
 
   const teamsTab = {
     name: "teams",
+    iconName: "basketball ball",
     displayName: "Teams",
     component: <Teams/>
   };
@@ -38,7 +40,7 @@ export const RootContainer = () => {
         <Grid.Column width={2}>
           <Sidebar mode={navigate} tabs={appTabs}/>
         </Grid.Column>
-        <Grid.Column width={14}>
+        <Grid.Column width={13} className='content'>
           {mainContent(sidebarState)}
         </Grid.Column>
       </Grid.Row>
