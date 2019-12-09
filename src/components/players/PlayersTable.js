@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
 import { DeletePlayer } from "./DeletePlayer";
+import { AddPlayerToTeam } from "./AddPlayerToTeam";
 
 
 export const PlayersTable = (props) => {
@@ -13,9 +14,19 @@ export const PlayersTable = (props) => {
         <Table.HeaderCell>Shirt Number</Table.HeaderCell>
         <Table.HeaderCell>Height</Table.HeaderCell>
         <Table.HeaderCell>Team</Table.HeaderCell>
-        <Table.HeaderCell>Update</Table.HeaderCell>
         <Table.HeaderCell>Delete</Table.HeaderCell>
       </Table.Row>
+    );
+  };
+
+  const playerOrAddComponent = (playerFirstName, playersTeam) => {
+    return (
+      playersTeam ? playersTeam['name']
+        : <AddPlayerToTeam
+          allTeams={props.allTeams}
+          teamChanged={(playerName, newTeamCode) => props.teamChanged(playerName, newTeamCode)}
+          playerFirstName={playerFirstName}
+        />
     );
   };
 
@@ -26,8 +37,7 @@ export const PlayersTable = (props) => {
         <Table.Cell>{player['lastName']}</Table.Cell>
         <Table.Cell>{player['shirtNumber']}</Table.Cell>
         <Table.Cell>{player['height']}</Table.Cell>
-        <Table.Cell>{(player['team'] && player['team']['name']) || '-'}</Table.Cell>
-        <Table.Cell>UPDATE</Table.Cell>
+        <Table.Cell>{playerOrAddComponent(player['firstName'], player['team'])}</Table.Cell>
         <Table.Cell>
           <DeletePlayer
             playerFirstName={player['firstName']}
