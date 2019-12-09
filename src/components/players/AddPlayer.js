@@ -26,7 +26,7 @@ export const AddPlayer = (props) => {
   };
 
   const button = () => {
-    return <Button fluid color='green' onClick={() => setModalState(true)} >Add Player</Button>;
+    return <Button fluid color='green' onClick={() => setModalState(true)}>Add Player</Button>;
   };
 
   return (

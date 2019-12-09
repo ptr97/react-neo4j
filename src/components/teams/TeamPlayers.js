@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Modal } from "semantic-ui-react";
 import { TeamPlayersTable } from "./TeamPlayersTable";
 import { getPlayersForTeam } from "../../services/TeamService";
@@ -32,7 +32,7 @@ export const TeamPlayers = (props) => {
   };
 
   const button = () => {
-    return <Button basic color='green' onClick={buttonClicked} >Show Players</Button>;
+    return <Button basic color='green' onClick={buttonClicked}>Show Players</Button>;
   };
 
   return (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal } from "semantic-ui-react";
 import { UpdateTeamForm } from "./UpdateTeamForm";
 
+
 export const UpdateTeam = (props) => {
 
   const [modalOpenState, setModalState] = useState(false);

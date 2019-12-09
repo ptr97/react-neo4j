@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
 
+
 export const SimpleTable = (props) => {
 
   const visibleValues = (model) => {

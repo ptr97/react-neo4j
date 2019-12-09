@@ -4,6 +4,7 @@ import { addPlayerToTeam, getAllPlayers } from "../../services/PlayersService";
 import { AddPlayer } from "./AddPlayer";
 import { getAllTeams } from "../../services/TeamService";
 
+
 export const Players = (props) => {
 
   const [playersState, setPlayers] = useState([]);

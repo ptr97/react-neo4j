@@ -26,7 +26,7 @@ export const AddTeam = (props) => {
   };
 
   const button = () => {
-    return <Button fluid color='green' onClick={() => setModalState(true)} >Add Team</Button>;
+    return <Button fluid color='green' onClick={() => setModalState(true)}>Add Team</Button>;
   };
 
   return (
