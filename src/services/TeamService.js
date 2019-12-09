@@ -38,3 +38,13 @@ export const addTeam = (teamInfo) => {
   };
   return graphQLRequest(body);
 };
+
+export const getPlayersForTeam = (teamCode) => {
+  const body = {
+    query: "query PlayersForTeamNested($teamCode: String) { Team(code: $teamCode) { players { firstName lastName shirtNumber height } }}",
+    variables: {
+      "teamCode": teamCode
+    }
+  };
+  return graphQLRequest(body);
+};
