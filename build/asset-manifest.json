@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react-neo4j/static/css/main.fec927dd.chunk.css",
+    "main.js": "/react-neo4j/static/js/main.526d8aa9.chunk.js",
+    "main.js.map": "/react-neo4j/static/js/main.526d8aa9.chunk.js.map",
+    "runtime-main.js": "/react-neo4j/static/js/runtime-main.972d2ffd.js",
+    "runtime-main.js.map": "/react-neo4j/static/js/runtime-main.972d2ffd.js.map",
+    "static/css/2.3378b8a3.chunk.css": "/react-neo4j/static/css/2.3378b8a3.chunk.css",
+    "static/js/2.33c3ff1b.chunk.js": "/react-neo4j/static/js/2.33c3ff1b.chunk.js",
+    "static/js/2.33c3ff1b.chunk.js.map": "/react-neo4j/static/js/2.33c3ff1b.chunk.js.map",
+    "index.html": "/react-neo4j/index.html",
+    "precache-manifest.985c6ced6a0677de0ff088bcae89d350.js": "/react-neo4j/precache-manifest.985c6ced6a0677de0ff088bcae89d350.js",
+    "service-worker.js": "/react-neo4j/service-worker.js",
+    "static/css/2.3378b8a3.chunk.css.map": "/react-neo4j/static/css/2.3378b8a3.chunk.css.map",
+    "static/css/main.fec927dd.chunk.css.map": "/react-neo4j/static/css/main.fec927dd.chunk.css.map",
+    "static/js/2.33c3ff1b.chunk.js.LICENSE": "/react-neo4j/static/js/2.33c3ff1b.chunk.js.LICENSE",
+    "static/media/semantic.min.css": "/react-neo4j/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.972d2ffd.js",
+    "static/css/2.3378b8a3.chunk.css",
+    "static/js/2.33c3ff1b.chunk.js",
+    "static/css/main.fec927dd.chunk.css",
+    "static/js/main.526d8aa9.chunk.js"
+  ]
+}
